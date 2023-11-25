@@ -28,7 +28,16 @@ export const HomePage = () => {
 
   return (
     <div className="container">
-      <Joke jokes={jokesData} />
+      {jokesData.map((joke) => (
+        <Joke
+          key={joke.id}
+          userAvatar={joke.avatar}
+          userName={joke.name}
+          text={joke.text}
+          likes={joke.likes}
+          dislikes={joke.dislikes}
+        />
+      ))}
     </div>
   );
 };
